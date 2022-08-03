@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Movie ID"
-        android:textStyle="bold"/>
+        android:textColor="#5C3D3D"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvMovieID"
@@ -22,9 +24,10 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="@string/movie_title"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:textColor="#5C3D3D"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etTitle"
@@ -36,9 +39,10 @@
         android:id="@+id/tvGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Genre"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:textColor="#5C3D3D"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etGenre"
@@ -50,9 +54,10 @@
         android:id="@+id/tvyear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Year"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:textColor="#5C3D3D"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etyear"
@@ -64,9 +69,10 @@
         android:id="@+id/tvrating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Rating"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:textColor="#5C3D3D"
+        android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/spinRating"
@@ -86,21 +92,24 @@
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:text="UPDATE" />
+            android:text="UPDATE"
+            app:backgroundTint="#5C4E41" />
 
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="DELETE" />
+            android:text="DELETE"
+            app:backgroundTint="#5C4E41" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btnCancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CANCEL" />
+        android:text="CANCEL"
+        app:backgroundTint="#5C4E41" />
 
 </LinearLayout>
 

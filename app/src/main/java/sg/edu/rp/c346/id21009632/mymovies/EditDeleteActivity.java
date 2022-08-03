@@ -82,7 +82,20 @@ public class EditDeleteActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBHelper dbh = new DBHelper(EditDeleteActivity.this);
+
+                AlertDialog.Builder myBuilder = new AlertDialog.Builder(EditDeleteActivity.this);
+
+                //set the dialog details
+                myBuilder.setTitle("NOTICE");
+                myBuilder.setMessage("Are you sure you want to update the movie " + data.getTitle());
+                myBuilder.setCancelable(false);  //close button
+
+                myBuilder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        DBHelper dbh = new DBHelper(EditDeleteActivity.this);
 
                 if ((!etTitle.getText().toString().equals("")) && (!etGenre.getText().toString().equals("")) && (!etyear.getText().toString().equals(""))) {
                     data.setTitle(etTitle.getText().toString());
@@ -106,6 +119,11 @@ public class EditDeleteActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(EditDeleteActivity.this, "Please fill in all fields in the form correctly", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+                myBuilder.setNegativeButton("CANCEL", null);
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
             }
         });
 
@@ -156,7 +174,7 @@ public class EditDeleteActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        finish();
+                        finish();   //end the activity
                     }
                 });
                 myBuilder.setNegativeButton("DO NOT DISCARD",null);

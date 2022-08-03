@@ -1,7 +1,9 @@
 package sg.edu.rp.c346.id21009632.mymovies;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +35,16 @@ public class MainActivity extends AppCompatActivity {
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder myBuilder = new AlertDialog.Builder(MainActivity.this);
+
+                //set the dialog details
+                myBuilder.setTitle("NOTICE");
+                myBuilder.setMessage("Are you sure you want to insert the following movie? ");
+                myBuilder.setCancelable(false);  //close button
+
+                myBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
                 if ((!etTitle.getText().toString().equals("")) && (!etGenre.getText().toString().equals("")) && (!etYear.getText().toString().equals(""))) {
                     String movieTitle = etTitle.getText().toString();
@@ -61,7 +73,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+                myBuilder.setNegativeButton("CANCEL", null);
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
+            }
+        });
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
