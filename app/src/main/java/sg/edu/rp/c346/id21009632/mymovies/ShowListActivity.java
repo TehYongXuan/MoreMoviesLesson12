@@ -61,7 +61,7 @@ public class ShowListActivity extends AppCompatActivity {
                 DBHelper dbh = new DBHelper(ShowListActivity.this);
                 String rating = spinnerRating.getSelectedItem().toString();
 
-                if (rating != "Please select a rating") {
+                if (rating != "Show all movies") {
                     alMovie.clear();
                     alMovie.addAll(dbh.getAllMoviesByRating(rating));
                     caMovie.notifyDataSetChanged();
@@ -104,7 +104,7 @@ public class ShowListActivity extends AppCompatActivity {
         caMovie.notifyDataSetChanged();
 
         alRating.clear();
-        alRating.add("Please select a rating");
+        alRating.add("Show all movies");
         alRating.addAll(dbh.getAllMoviesByRating());
         aaRating.notifyDataSetChanged();
     }
